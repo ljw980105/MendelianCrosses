@@ -8,24 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		04AF199720A383AD0035EC28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF199620A383AD0035EC28 /* AppDelegate.m */; };
-		04AF199A20A383AD0035EC28 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF199920A383AD0035EC28 /* ViewController.m */; };
 		04AF199D20A383AD0035EC28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04AF199B20A383AD0035EC28 /* Main.storyboard */; };
 		04AF199F20A383AE0035EC28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04AF199E20A383AE0035EC28 /* Assets.xcassets */; };
 		04AF19A220A383AE0035EC28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04AF19A020A383AE0035EC28 /* LaunchScreen.storyboard */; };
 		04AF19A520A383AE0035EC28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF19A420A383AE0035EC28 /* main.m */; };
+		04AF19AD20A386D10035EC28 /* CrossesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF19AC20A386D10035EC28 /* CrossesTableViewController.m */; };
+		04AF19B020A39C4F0035EC28 /* MendelianCrossesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF19AF20A39C4F0035EC28 /* MendelianCrossesModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04AF199220A383AD0035EC28 /* MendelianCrosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MendelianCrosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04AF199520A383AD0035EC28 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04AF199620A383AD0035EC28 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04AF199820A383AD0035EC28 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04AF199920A383AD0035EC28 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		04AF199C20A383AD0035EC28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04AF199E20A383AE0035EC28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04AF19A120A383AE0035EC28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04AF19A320A383AE0035EC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04AF19A420A383AE0035EC28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04AF19AB20A386D10035EC28 /* CrossesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrossesTableViewController.h; sourceTree = "<group>"; };
+		04AF19AC20A386D10035EC28 /* CrossesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrossesTableViewController.m; sourceTree = "<group>"; };
+		04AF19AE20A39C1F0035EC28 /* MendelianCrossesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MendelianCrossesModel.h; sourceTree = "<group>"; };
+		04AF19AF20A39C4F0035EC28 /* MendelianCrossesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MendelianCrossesModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +61,12 @@
 		04AF199420A383AD0035EC28 /* MendelianCrosses */ = {
 			isa = PBXGroup;
 			children = (
+				04AF19AE20A39C1F0035EC28 /* MendelianCrossesModel.h */,
+				04AF19AF20A39C4F0035EC28 /* MendelianCrossesModel.m */,
+				04AF19AB20A386D10035EC28 /* CrossesTableViewController.h */,
+				04AF19AC20A386D10035EC28 /* CrossesTableViewController.m */,
 				04AF199520A383AD0035EC28 /* AppDelegate.h */,
 				04AF199620A383AD0035EC28 /* AppDelegate.m */,
-				04AF199820A383AD0035EC28 /* ViewController.h */,
-				04AF199920A383AD0035EC28 /* ViewController.m */,
 				04AF199B20A383AD0035EC28 /* Main.storyboard */,
 				04AF199E20A383AE0035EC28 /* Assets.xcassets */,
 				04AF19A020A383AE0035EC28 /* LaunchScreen.storyboard */,
@@ -141,8 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AF199A20A383AD0035EC28 /* ViewController.m in Sources */,
+				04AF19AD20A386D10035EC28 /* CrossesTableViewController.m in Sources */,
 				04AF19A520A383AE0035EC28 /* main.m in Sources */,
+				04AF19B020A39C4F0035EC28 /* MendelianCrossesModel.m in Sources */,
 				04AF199720A383AD0035EC28 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
