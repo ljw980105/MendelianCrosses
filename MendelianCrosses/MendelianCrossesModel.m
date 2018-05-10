@@ -18,6 +18,7 @@
     if (self = [super init]) {
         _firstGenome = @"";
         _secondGenome = @"";
+        _results = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -27,23 +28,32 @@
     _secondGenome = second;
 }
 
-- (NSMutableArray *)results{
+- (void) setCrossResults{
     NSUInteger length1 = [_firstGenome length];
     NSUInteger length2 = [_secondGenome length];
-    if (length1 != length2) return nil;
-    if (!( length1 == 2 || length1 == 4 )) return nil;
-    NSMutableArray *res = [[NSMutableArray alloc] init];
+    if (length1 != length2) return;
+    if (!( length1 == 2 || length1 == 4 )) return;
     if (length1 == 2){ // monohybrid cross
-        
-    } else { // dihybrid cross
-        
+        NSRange firstRange = NSMakeRange(0, 1);
+        NSRange secondRange = NSMakeRange(1, 1);
+        NSString *first = [_firstGenome substringWithRange:firstRange];
+        NSString *second = [_firstGenome substringWithRange:secondRange];
+        NSString *third = [_secondGenome substringWithRange:firstRange];
+        NSString *fourth = [_secondGenome substringWithRange:secondRange];
+        [_results addObject:first];
+        [_results addObject:second];
+        [_results addObject:third];
+        [_results addObject:fourth];
+        [_results addObject:[first stringByAppendingString:third]];
+        [_results addObject:[second stringByAppendingString: third]];
+        [_results addObject:[first stringByAppendingString:fourth]];
+        [_results addObject:[second stringByAppendingString:fourth]];
     }
-    return res;
+}
+
+- (NSMutableArray<NSString *> *)getCrossResults{
+    return _results;
 }
 
 
 @end
-
-
-
-

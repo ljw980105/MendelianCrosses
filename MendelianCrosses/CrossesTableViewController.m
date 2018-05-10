@@ -20,6 +20,7 @@
 }
 
 - (IBAction)computeCrosses:(UIBarButtonItem *)sender {
+    // retrieve the texts
     NSIndexPath *firstIndex = [NSIndexPath indexPathForRow:0 inSection:0];
     UITextField *firstTextField = (UITextField *) [[[self.tableView cellForRowAtIndexPath: firstIndex] contentView] subviews][1];
     NSString *firstGenome = firstTextField.text;
@@ -27,11 +28,23 @@
     NSIndexPath *secondIndex = [NSIndexPath indexPathForRow:1 inSection:0];
     UITextField *secondTextField = (UITextField *) [[[self.tableView cellForRowAtIndexPath: secondIndex] contentView] subviews][1];
     NSString *secondGenome = secondTextField.text;
-    NSLog(@"First: %@, Second: %@",firstGenome, secondGenome);
-    [_crosses setGenome:firstGenome secondString:secondGenome];
+    //NSLog(@"First: %@, Second: %@",firstGenome, secondGenome);
     
     [firstTextField resignFirstResponder];
     [secondTextField resignFirstResponder];
+    
+    [_crosses setGenome:firstGenome secondString:secondGenome];
+    [_crosses setCrossResults];
+    if ([[_crosses getCrossResults] count] != 0){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"showCrosses" sender:self];
+        });
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Illegal" message: @"The data entered has incorrect format" preferredStyle:UIAlertControllerStyleAlert];
+        [alert view].tintColor = [UIColor colorWithRed:87/(Float32)255 green:169/(Float32)255 blue:67/(Float32)255 alpha:1];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+        [self presentViewController: alert animated:true completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,15 +109,17 @@
     return cell;
 }
 
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier]  isEqual: @"showCrosses"]){
+        ResultsViewController *vc = (ResultsViewController *) [segue destinationViewController];
+        vc.crossResults = [_crosses getCrossResults];
+    }
 }
-*/
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MendelianCrossesModel.h"
+#import "ResultsViewController.h"
 
 @interface CrossesTableViewController : UITableViewController
 
