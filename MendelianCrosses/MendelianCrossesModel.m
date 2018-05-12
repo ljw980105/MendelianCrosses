@@ -29,6 +29,7 @@
 }
 
 - (void) setCrossResults{
+    [_results removeAllObjects];
     NSUInteger length1 = [_firstGenome length];
     NSUInteger length2 = [_secondGenome length];
     if (length1 != length2) return;

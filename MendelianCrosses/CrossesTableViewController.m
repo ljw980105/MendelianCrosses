@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _crosses= [[MendelianCrossesModel alloc] init];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
 }
 
 - (IBAction)computeCrosses:(UIBarButtonItem *)sender {
